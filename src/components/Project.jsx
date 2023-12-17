@@ -1,6 +1,6 @@
 import React from 'react'
 import projectv1 from "../assets/Project1.mp4";
-import projectv2 from "../assets/Project2.mp4";
+import projectv2 from "../assets/project2.mp4";
 import projectv3 from "../assets/Project3.mp4";
 import { useState } from 'react';
 const Project = () => {
