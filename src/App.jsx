@@ -5,7 +5,7 @@ import Section from './components/Section'
 import Education from './components/Education'
 import Experience from './components/Experience'
 import Project from './components/Project'
-import Contact from './components/contact'
+import Contact from './components/Contact'
 
 
 
