@@ -1,8 +1,13 @@
 import React from 'react'
 import { FaEnvelope, FaPhone, FaGithub  } from 'react-icons/fa'
 import emailjs from 'emailjs-com';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 const Contact = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -21,7 +26,7 @@ const Contact = () => {
         window.location.href = resumeUrl;
       };
   return (
-    <section id='con' class=" con-c mx-auto  my-8 p-8 text-white ">
+    <section id='con' class=" con-c mx-auto  my-8 p-8 text-white">
           <h1  class="text-2xl font-bold mb-4">Contact</h1>
           <div className='flex lg:flex-row flex-col '>
           <div className="lg:flex lg:flex-col lg:w-[30%] mt-2 p-4 ">
@@ -46,7 +51,7 @@ const Contact = () => {
     </div>
    
       </div>
-      <div  className=' flex w-[70%] h-full justify-center '>
+      <div  className=' flex w-[70%] h-full justify-center' >
       <form className='flex flex-col lg:w-[80%] w-full' onSubmit={sendEmail}   >
       <label>
         Name </label>
