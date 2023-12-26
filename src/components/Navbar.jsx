@@ -1,8 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import { Link } from 'react-router-dom';
+
 const Navbar = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
 
@@ -18,7 +17,7 @@ const Navbar = () => {
     };
   return (
 
-      <nav class="bg-gray-900 text-white p-4">
+      <nav class=" text-white p-4">
           <div class="container mx-auto flex justify-between items-center">
               <div class="text-2xl font-bold animate__animated animate__fadeInDownBig"  >Ayushi Joshi</div>
               <div className="  lg:hidden md:hidden cursor-pointer" onClick={toggleMenu}>
@@ -33,12 +32,12 @@ const Navbar = () => {
             <div className=" cursor-pointer mb-4" onClick={toggleMenu}>
               <AiOutlineClose size={25} color="white" />
             </div>
-            <ul className="space-y-4 h-64  flex flex-col">
-              <a href='#' nav="home" className="hover:text-blue-300 text-gray-800 font-semibold">
-                Home</a>
-              <a href='#' nav="skill" className="hover:text-blue-300 text-gray-800 font-semibold">
+            <ul className="space-y-2 h-64 flex flex-col cursor-pointer">
+              <li onClick={() => scrollToSection('home')} className="hover:text-blue-300 text-gray-800 font-semibold">
+                Home</li>
+              <li onClick={() => scrollToSection('skill')} className="hover:text-blue-300 text-gray-800 font-semibold">
                 Skills
-              </a>
+              </li>
               <li  onClick={() => scrollToSection('edu')} className="hover:text-blue-300 text-gray-800 font-semibold">
                 Education
               </li>
@@ -55,11 +54,12 @@ const Navbar = () => {
           </div>
         )}
               <div class={`lg:flex ${isMenuOpen ? 'block' : 'hidden'} space-x-4 sm:block hidden`}>
-                  <a href="#" class="hover:text-gray-300" onClick={() => setMenuOpen(false)}>Home</a>
-                  <a href="#" class="hover:text-gray-300 " onClick={() => setMenuOpen(false)}>Skills</a>
-                  <a href="#" class="hover:text-gray-300" onClick={() => setMenuOpen(false)}>Education</a>
-                  <a href="#" class="hover:text-gray-300" onClick={() => setMenuOpen(false)}>Portfolio</a>
-                  <a href="#" class="hover:text-gray-300" onClick={() => setMenuOpen(false)}>Contact</a>
+                  <a href="#" class="hover:text-gray-300" onClick={() => {setMenuOpen(false); scrollToSection('home')}}>Home</a>
+                  <a href="#" class="hover:text-gray-300 " onClick={() => {setMenuOpen(false);scrollToSection('skill')}}>Skills</a>
+                  <a href="#" class="hover:text-gray-300" onClick={() => {setMenuOpen(false) ;scrollToSection('edu')}}>Education</a>
+                  <a href="#" class="hover:text-gray-300" onClick={() => {setMenuOpen(false) ;scrollToSection('exp')}}>Experience</a>
+                  <a href="#" class="hover:text-gray-300" onClick={() =>{ setMenuOpen(false);scrollToSection('project')}}>Project</a>
+                  <a href="#" class="hover:text-gray-300" onClick={() => {setMenuOpen(false);scrollToSection('con')}}>Contact</a>
               </div>
           </div>
       </nav>

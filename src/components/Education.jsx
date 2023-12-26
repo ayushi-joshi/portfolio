@@ -1,15 +1,16 @@
 import React from 'react'
 import { useState } from 'react';
+import { AiOutlineDown,AiOutlineUp } from "react-icons/ai";
 const EducationPanel = ({ title, content }) => {
     const [isExpanded, setIsExpanded] = useState(false);
-  
+   
     const togglePanel = () => {
       setIsExpanded(!isExpanded);
     };
   
     return (
-      <div id='edu' className=" border border-black  p-4 rounded  mb-4 overflow-hidden hover:bg-blue-500 flex flex-col">
-        <div className="flex items-center justify-between ">
+      <div id='edu' className=" border-b-2 p-4 rounded  mb-4 overflow-hidden hover:bg-blue-500 flex flex-col" data-aos="fade-down-right">
+        <div className="flex items-center justify-between" >
           <p className="lg:text-lg text-sm font-semibold">{title}</p>
           <div
             className="text-black cursor-pointer"
@@ -17,7 +18,7 @@ const EducationPanel = ({ title, content }) => {
             role="button"
             tabIndex={0}
           >
-            {isExpanded ? 'Show Less' : 'Show More'}
+            {isExpanded ? <AiOutlineUp  color='white' size={25} /> : <AiOutlineDown color='white' size={25} />}
           </div>
         </div>
         {isExpanded && <div className="mt-2 pt-2 p-2">{content}</div>}
@@ -27,7 +28,7 @@ const EducationPanel = ({ title, content }) => {
   
   const Education = () => {
     return (
-      <div className="container bg-slate-300 mx-auto my-8 p-8 shadow-md" data-aos="fade-down-right">
+      <div className="  mx-auto my-8 p-8 shadow-md text-white" >
         <h2 className="text-2xl font-bold mb-4">Education Details</h2>
         <EducationPanel
           title="Master of Computer Application"

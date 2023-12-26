@@ -26,7 +26,7 @@ const Experience = () => {
   return (
 
    
-    <div id='exp' class="timeline container mx-auto  my-8 p-8 shadow-md" >
+    <div id='exp' class="timeline text-white mx-auto  my-8 p-8 " >
      <h2 className="text-2xl font-bold mb-4">Experience</h2>
       <div class="timeline-item flex flex-col">
         
@@ -34,10 +34,10 @@ const Experience = () => {
       {
         experiences.map((item, index)=>(
             
-            <div key={index} class="timeline-content p-2 border-b-2 mt-4 border-black  w-full animate__animated animate__slideInUp"  >
+            <div key={index} class="timeline-content p-2 border-b-2 mt-4   w-full animate__animated animate__slideInUp"  >
             <div className='flex flex-row items-center  ' >
             <div class="timeline-icon"></div>
-            <FaBriefcase color='#365314' size={30}/>
+            <FaBriefcase color='#fcd34d' size={30}/>
             </div>
             <div className='mt-2' >
             <h2 className='text-lg font-semibold'>{item.title}</h2>

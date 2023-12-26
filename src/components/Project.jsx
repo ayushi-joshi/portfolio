@@ -20,12 +20,12 @@ const Project = () => {
         });
     };
   return (
-    <section id="project" className="mx-auto my-8 p-8 shadow-md">
-            <h2 className="text-2xl font-bold mb-4">Projects</h2>
+    <section id="project" className="mx-auto my-8 p-8 ">
+            <h2 className="text-2xl font-bold mb-4 text-white">Projects</h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" >
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 " >
                 {projects.map((project, index) => (
-                    <div key={index} className="bg-white con-p p-6 rounded-md shadow-md animate__animated  animate__zoomIn" >
+                    <div key={index} className=" border con-p p-2 rounded-md shadow-md animate__animated animate__zoomIn " >
                         <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-black">
                             {project.video && (
                                 <div className="relative overflow-hidden" style={{ paddingTop: '56.25%' }}>
@@ -34,8 +34,8 @@ const Project = () => {
                                     </video>
                                 </div>
                             )}
-                            <h3 className="text-lg font-bold mb-2 text-center">{project.name}</h3>
-                            <p>
+                            <h3 className="text-lg text-white font-bold mb-2 text-center">{project.name}</h3>
+                            <p className='text-white'>
                                 {expandedProjects[index] ? project.description : project.description.slice(0, 120) + '...'}
                             </p>
                         </a>
@@ -50,6 +50,9 @@ const Project = () => {
                     </div>
                 ))}
             </div>
+         
+                  
+            
         </section>
 
 )

@@ -14,3 +14,4 @@ export default {
   plugins: [],
 }
 
+// animate__animated animate__zoomInUp
